@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sophisticated Professional Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Sophisticated Dark Theme */
+    --background: 220 13% 5%;
+    --foreground: 210 40% 95%;
+
+    /* Elegant Grays */
+    --primary: 0 0% 100%; /* Pure White */
+    --primary-foreground: 220 13% 5%; /* Dark Background */
+    --secondary: 220 13% 85%; /* Light Gray */
+    --tertiary: 220 13% 70%; /* Medium Gray */
+    --quaternary: 220 13% 55%; /* Darker Gray */
+
+    /* Surface Colors */
+    --card: 220 13% 8%;
+    --card-foreground: 210 40% 95%;
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 95%;
+    --secondary-foreground: 220 13% 5%;
+    --muted: 220 13% 12%;
+    --muted-foreground: 220 13% 65%;
+    --accent: 220 13% 15%;
+    --accent-foreground: 210 40% 95%;
+
+    /* Subtle Accents */
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 220 13% 25%;
+
+    /* Elegant Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(0 0% 100%),
+      hsl(220 13% 85%)
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(220 13% 15%),
+      hsl(220 13% 8%)
+    );
+    --gradient-subtle: linear-gradient(
+      135deg,
+      hsl(220 13% 12%),
+      hsl(220 13% 5%)
+    );
+
+    /* Sophisticated Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(220 13% 0% / 0.25);
+    --shadow-soft: 0 10px 30px -5px hsl(220 13% 0% / 0.15);
+    --shadow-crisp: 0 4px 20px -2px hsl(220 13% 0% / 0.1);
+
+    /* Typography Scale */
+    --font-display: "Playfair Display", serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "Space Grotesk", monospace;
+
+    /* Sophisticated Spacing */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background: hsl(var(--background));
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        hsl(220 13% 10% / 0.3) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        hsl(220 13% 12% / 0.2) 0%,
+        transparent 50%
+      );
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Elegant Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary));
+  }
+
+  /* Typography Classes */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  /* Sophisticated Effects */
+  .glass-elegant {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.8),
+      hsl(var(--card) / 0.4)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Typography Effects */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-elegant {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .text-refined {
+    font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: 0.025em;
+  }
+
+  /* Elegant Borders */
+  .border-elegant {
+    border: 1px solid hsl(var(--border));
+    box-shadow: inset 0 1px 0 hsl(var(--foreground) / 0.05);
+  }
+
+  /* Subtle Animations */
+  .fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .parallax {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Professional Layout */
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .container-elegant {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Typewriter Effect - Refined */
+  .typewriter-elegant {
+    border-right: 2px solid hsl(var(--primary));
+    animation: blink-elegant 1.2s infinite;
+  }
+
+  /* Grid Patterns - Subtle */
+  .grid-pattern {
+    background-image: linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  /* Refined Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink-elegant {
+    0%,
+    50% {
+      border-right-color: hsl(var(--primary));
+    }
+    51%,
+    100% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes float-gentle {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes scale-gentle {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes meteor-effect {
+    to {
+      transform: rotate(215deg) translateX(calc(100vw + 100px));
+    }
+  }
+
+  /* Animation Classes */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  .animate-scale-gentle {
+    animation: scale-gentle 3s ease-in-out infinite;
+  }
+
+  .animate-meteor-effect {
+    animation: meteor-effect linear infinite;
+  }
+
+  /* Stagger Delays - Refined */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-450 {
+    animation-delay: 450ms;
+  }
+  .delay-600 {
+    animation-delay: 600ms;
+  }
+}
